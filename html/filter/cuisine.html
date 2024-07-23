@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../../styles/reset.css">
+        <link rel="stylesheet" href="../../styles/style.css">
+        <title>DevGrub</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+        <script src="../../js/cuisine.js" type="module"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+            <h1><a href="../../index.html">.devgrub</a></h1>
+            </header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../../index.html">getHomePage();</a>
+                    </li>
+                    <li>
+                        <a href="../random_recipe.html">getRandomRecipe();</a>
+                    </li>
+                    <li>
+                        <a href="../search_recipe.html">searchForRecipe();</a>
+                    </li>
+                    <li>
+                        <a href="./choose_filter.html">filter()</a>
+                        <ul>
+                            <li>
+                                <a href="./recipe_category.html">.byRecipeCategory()</a>
+                            </li>
+                            <li>
+                                <a href="./cuisine.html">.byCuisine()</a>
+                            </li>
+                            <li>
+                                <a href="./ingredient.html">.byIngredient();</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <main class="recipe_main">
+                <div id="recipe_wrapper">
+                    <article id="recipe_article">
+                        
+                    </article>
+                    <fieldset id="meta_info">
+                    </fieldset>
+                        
+                </div>
+            </main>
+            <footer>
+                <p>
+                    DevGrub Co, 2024. No copyright or rights reserved. This website was made as an assignment at Uppsala University.
+                </p>
+                <p>
+                    Recipe data and images from <a href="https://www.themealdb.com/api.php">The Meal DB</a>. 
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
