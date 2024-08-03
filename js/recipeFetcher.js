@@ -22,5 +22,25 @@ export async function fetchRecipeThroughID(id) {
         })
         .then((json) => {
             return json.meals[0];
+        });
+}
+
+export async function fetchFilterList(type) {
+    return fetch('https://www.themealdb.com/api/json/v1/1/list.php?'+ type +'=list')
+        .then((response) => {
+        return response.json();
+        })
+        .then((json) => {
+            return json.meals;
+        })
+}
+
+export async function fetchFilteredItems(filterCategory, filter) {
+    return fetch('https://www.themealdb.com/api/json/v1/1/filter.php?' + filterCategory + '=' + filter)
+        .then((response) => {
+            return response.json();
+        })
+        .then((json) => {
+            return json.meals;
         })
 }
