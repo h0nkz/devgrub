@@ -107,10 +107,15 @@ async function displayRecipe(event) {
     const META_FIELDSET = document.createElement('fieldset');
     META_FIELDSET.id = "meta_info";
     META_FIELDSET.appendChild(recipe.getMetaHTML());
-    
-    FILTER_MAIN.replaceChild(RECIPE_ARTICLE, FILTERED_ITEMS_UL);
-    FILTER_MAIN.replaceChild(META_FIELDSET, BACK_BUTTON);
 
+    const recipe_back_button = document.createElement('button');
+    recipe_back_button.id = getListItemString(recipe);
+    recipe_back_button.innerText = 'goBack();'
+    recipe_back_button.addEventListener('click', goBackFromRecipe);
+    
+    FILTER_MAIN.replaceChildren(RECIPE_ARTICLE);
+    FILTER_MAIN.appendChild(META_FIELDSET);
+    FILTER_MAIN.appendChild(recipe_back_button);
 
 }
 
@@ -142,5 +147,13 @@ function goBack() {
     FILTER_MAIN.replaceChild(flex_ul, FILTERED_ITEMS_UL);
     FILTERED_ITEMS_UL.textContent = '';
     FILTER_MAIN.removeChild(BACK_BUTTON);
+}
+
+function goBackFromRecipe(event) {
+    FILTER_BY_H2.innerText = event.srcElement.id;
+    FILTER_MAIN.replaceChildren(FILTER_BY_H2);
+
+    FILTER_MAIN.appendChild(FILTERED_ITEMS_UL);
+    FILTER_MAIN.appendChild(BACK_BUTTON);
 }
 
