@@ -32,11 +32,21 @@ export async function fetchFilterList(type) {
         })
         .then((json) => {
             return json.meals;
-        })
+        });
 }
 
 export async function fetchFilteredItems(filterCategory, filter) {
     return fetch('https://www.themealdb.com/api/json/v1/1/filter.php?' + filterCategory + '=' + filter)
+        .then((response) => {
+            return response.json();
+        })
+        .then((json) => {
+            return json.meals;
+        });
+}
+
+export async function searchRecipies(query) {
+    return fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + query)
         .then((response) => {
             return response.json();
         })
