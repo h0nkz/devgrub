@@ -14,3 +14,4 @@ async function search() {
     console.dir(await searchRecipies(SEARCH_BAR.value));
 }
 
+    
