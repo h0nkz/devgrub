@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../../styles/reset.css">
+        <link rel="stylesheet" href="../../styles/style.css">
+        <title>chooseFilter | DevGrub</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+        <script src="../../js/choose_filter.js" type="module"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+            <h1><a href="../../index.html">.devgrub</a></h1>
+            </header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../../index.html">getHomePage();</a>
+                    </li>
+                    <li>
+                        <a href="../random_recipe.html">getRandomRecipe();</a>
+                    </li>
+                    <li>
+                        <a href="../search_recipe.html">searchForRecipe();</a>
+                    </li>
+                    <li>
+                        <a href="./choose_filter.html">filter()</a>
+                        <ul>
+                            
+                            <li>
+                                <a href="./filterBy.html?filter=recipeCategory">.byRecipeCategory()</a>
+                            </li>
+                            <li>
+                                <a href="./filterBy.html?filter=cuisine">.byCuisine()</a>
+                            </li>
+                            <li>
+                                <a href="./filterBy.html?filter=ingredient">.byIngredient();</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <main id="choose_filter_main">
+                <h2 class="filter_type_h2" id="byRecipeCategory_h2"><a href="./filterBy.html?filter=recipeCategory">byRecipeCategory();</a></h2>
+                <p class="filter_descr_p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                
+                <h2 class="filter_type_h2" id="byCuisine"><a href="./filterBy.html?filter=cuisine">byCuisine();</a></h2>
+                <p class="filter_descr_p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+
+                <h2 class="filter_type_h2"><a href="./filterBy.html?filter=ingredient">byIngredient();</a></h2>
+                <p class="filter_descr_p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </main>
+            <footer>
+                <p>
+                    DevGrub Co, 2024. No copyright or rights reserved. This website was made as an assignment at Uppsala University.
+                </p>
+                <p>
+                    Recipe data and images from <a href="https://www.themealdb.com/api.php">The Meal DB</a>. 
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
