@@ -275,6 +275,52 @@ table {
         width: 760px;
     }
 
+    .filter_type_h2 {
+        font-size: 1.3rem;
+        margin: auto 0 auto 0;
+    }
+
+    .filter_type_h2 a {
+        color: var(--var-orange);
+    }
+
+    #choose_filter_main {
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        grid-template-rows: 20% 70%;
+        column-gap: 1.6rem; 
+    }
+
+    #byRecipeCategory_h2 {
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+
+    #byRecipe_descr_p {
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    #byCuisine_h2 {
+        grid-row: 1/2;
+        grid-column: 2/3;
+    }
+
+    #byCuisine_descr_p {
+        grid-row: 2/3;
+        grid-column: 2/3;
+    }
+
+    #byIngredient_h2 {
+        grid-row: 1/2;
+        grid-column: 3/4;
+    }
+
+    #byIngredient_descr_p {
+        grid-row: 2/3;
+        grid-column: 3/4;
+    }
+
     table {
         gap: 1rem;
     }
