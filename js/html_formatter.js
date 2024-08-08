@@ -23,6 +23,9 @@ function getListItemString(jsonNode, filterType) {
 }
 
 export function makeRecipeThumbnails(filteredItems, onclickfunc ) {
+    if(filteredItems == null) {
+        return;
+    }
     let filtered_items_ul = document.createElement('ul');
     filtered_items_ul.className = 'filtered_items_ul';
     

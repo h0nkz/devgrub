@@ -24,10 +24,27 @@ function addEventListeners() {
 async function search() {
     let results = await searchRecipies(SEARCH_BAR.value);
 
+    if(search_results_ul != null) {
+        search_results_ul.textContent = '';
+    }
+
     search_results_ul = makeRecipeThumbnails(results, displayRecipe);
 
-    SEARCH_MAIN.appendChild(search_results_ul);
+  
 
+    if(search_results_ul == null) {
+
+        search_results_ul = document.createElement('ul');
+        search_results_ul.innerHTML = '<li>No recipies with ' + SEARCH_BAR.value + ' found :(</li>'
+      /*  const no_result_text = document.createElement('p');
+
+        no_result_text.innerText = 'No recipies found :(';
+        SEARCH_MAIN.appendChild(no_result_text); */
+    }
+
+        SEARCH_MAIN.appendChild(search_results_ul);
+
+    
 
 
 }

@@ -29,6 +29,7 @@ getFilterType();
 
 const filterList = await fetchFilterList(getFilterChar());
 
+
 showCuisineFilters().then( () => {
     addEventListeners();
 }

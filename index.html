@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="styles/reset.css">
         <link rel="stylesheet" href="styles/style.css">
-        <title>DevGrub</title>
+        <title>Home | devgrub</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,15 +52,15 @@
                     Aenean ac magna turpis. Donec convallis bibendum tempor. Nullam ut urna urna. Curabitur in leo et enim sodales tristique. In metus enim, rutrum a magna nec, vestibulum rutrum est. Maecenas eu purus vel lorem tincidunt blandit et vestibulum velit. Nulla sollicitudin ligula a leo efficitur laoreet. Morbi hendrerit, lectus id finibus cursus, erat nunc accumsan diam, eu malesuada metus felis eget neque. Proin dictum leo orci, sed ullamcorper metus mollis euismod. Curabitur tincidunt quis metus eget malesuada. Pellentesque orci nisi, consectetur mollis risus vitae, viverra ultricies nisl. Nam sit amet molestie erat.
                 </p>
                 <h2>subscribe to our newsletter</h2>
-                <fieldset>
-                    <form action="#" method="POST">
-                        <label for="name">Name: </label>
-                        <input type="text" id="name" name="name">
+                <fieldset id="newsletter_form">
+                    <form action="#" method="GET" onsubmit="javascript:alert('You have subscribed successfully!');">
+                        <label for="name" class="newsletter_label">Name: </label>
+                        <input type="text" id="name" name="name" class="newsletter_input">
                         <br>
-                        <label for="email">Email: </label>
-                        <input type="text" id="email" name="email">
+                        <label for="email" class="newsletter_label">Email: </label>
+                        <input type="text" id="email" name="email" class="newsletter_input">
                         <br>
-                        <input type="submit" value="subscribe">
+                        <input type="submit" value="subscribe" id="subscribe_button">
                     </form>
                 </fieldset>
             </main>
