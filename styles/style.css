@@ -1,11 +1,3 @@
-html {
-    background-color: var(--background-color);
-    color: white;
-    font-family: "Courier Prime", monospace;
-    font-weight: 400;
-    font-style: normal;
-}
-
 :root {
     --keyword-purple: #C678DD;
     --function-blue: #6fb7ee;
@@ -16,32 +8,17 @@ html {
     --recipe-border: #858585;
 }
 
-.hidden {
-	border: 0 !important;
-	clip: rect(1px,1px,1px,1px) !important;
-	-webkit-clip-path: inset(50%) !important;
-	clip-path: inset(50%) !important;
-	height: 1px !important;
-	margin: -1px !important;
-	overflow: hidden !important;
-	padding: 0 !important;
-	position: absolute !important;
-	white-space: nowrap !important;
-	width: 1px !important;
+html {
+    background-color: var(--background-color);
+    color: white;
+    font-family: "Courier Prime", monospace;
+    font-weight: 400;
+    font-style: normal;
 }
 
 a {
     text-decoration: none;
     color: white;
-}
-
-#recipe_name {
-    font-size: 1.5rem;
-}
-
-#random_main button {
-    width: 100%;
-    font-size: 0.8rem;
 }
 
 h1 {
@@ -53,42 +30,6 @@ h1 {
 h2 {
     font-weight: 600;
     font-size: 2rem;
-}
-
-#searchBar {
-    background-color: var(--recipe-background);
-    height: 2.5rem;
-    width: 30%;
-    margin-right: 1rem;
-    padding-left: 0.5rem;
-    color: #fff;
-    font-family: "Courier Prime", monospace;
-    border-color: var(--recipe-border);
-
-}
-
-#searchDiv {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 1rem;
-}
-
-.filtered_item {
-    display: flex;
-    align-items: center;
-    margin-top: 2rem;
-    height: 7rem;
-    width: 40%;
-    padding-right: 3rem;
-    background-color: var(--recipe-background);
-    font-size: 0.8rem;
-}
-
-.food_thumbnail {
-    max-height: 6rem;
-    margin-right: 2rem;
-    margin-left: 2rem;
 }
 
 button {
@@ -106,6 +47,15 @@ button:hover {
     background-color: var(--recipe-background);
     cursor: pointer;
 }
+
+table {
+    width: 100%;
+}
+
+form {
+    gap: 1rem;
+}
+
 nav a {
     color: var(--function-blue);
 }
@@ -114,17 +64,33 @@ footer a {
     text-decoration: underline;
 }
 
-table {
-    width: 100%;
+.hidden {
+	border: 0;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
 }
 
 
-#recipe_article {
+.filtered_item {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    height: 7rem;
+    width: 40%;
+    padding-right: 3rem;
     background-color: var(--recipe-background);
-    border-width: 2px;
-    border-style: solid;
-    border-color: var(--recipe-border);
-    padding: 2rem;
+    font-size: 0.8rem;
+}
+
+.food_thumbnail {
+    max-height: 6rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
 }
 
 .indent {
@@ -162,6 +128,42 @@ table {
     border-color: var(--recipe-border);
 }
 
+#recipe_name {
+    font-size: 1.5rem;
+}
+
+#random_main button {
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+#searchBar {
+    background-color: var(--recipe-background);
+    height: 2.5rem;
+    width: 30%;
+    margin-right: 1rem;
+    padding-left: 0.5rem;
+    color: #fff;
+    font-family: "Courier Prime", monospace;
+    border-color: var(--recipe-border);
+
+}
+
+#searchDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+#recipe_article {
+    background-color: var(--recipe-background);
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--recipe-border);
+    padding: 2rem;
+}
+
 #newsletter_form {
     border-color: var(--recipe-border);
     border-style: solid;
@@ -177,21 +179,11 @@ table {
     margin-left: 15.5em;
 }
 
-form {
-    gap: 1rem;
-}
-
 #recipe_paragraph {
     line-height: 2rem;
 }
 
 @media (min-width: 1000px) {
-    #wrapper {
-        display: grid;
-        grid-template-rows: 140px 1fr 120px;
-        grid-template-columns: 2fr 240px 760px 2fr;
-    } 
-
     header {
         grid-row: 1/2;
         grid-column: 2/3;
@@ -214,14 +206,29 @@ form {
         margin-right: 0rem;
         
     }
+    table {
+        gap: 1rem;
+    }
 
-    #random_main {
-        
-        display: grid;
-        grid-template-rows: 1fr 200px 40px;
-        grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 1rem;
-        row-gap: 2rem;
+    footer {
+        grid-row: 3/4;
+        grid-column: 2/4;
+        padding: 2rem 2rem 0rem 2rem;
+    }
+
+    nav ul {
+        list-style-position: outside;
+        list-style-type: disc;
+        padding-left: 0.5rem;
+    }
+
+    nav li {
+        margin: 0.5rem;
+    }
+
+    p {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 
     .flex_ul {
@@ -254,6 +261,15 @@ form {
 
     }
 
+    .filter_type_h2 {
+        font-size: 1.3rem;
+        margin: auto 0 auto 0;
+    }
+
+    .filter_type_h2 a {
+        color: var(--var-orange);
+    }
+
     .filter_main article, .filter_main table {
         margin-bottom: 1rem;
     }
@@ -268,7 +284,20 @@ form {
         text-decoration: underline;
     }
 
-   
+    #random_main {
+        
+        display: grid;
+        grid-template-rows: 1fr 200px 40px;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 1rem;
+        row-gap: 2rem;
+    }
+
+    #wrapper {
+        display: grid;
+        grid-template-rows: 140px 1fr 120px;
+        grid-template-columns: 2fr 240px 760px 2fr;
+    } 
 
     #recipe_article {
         grid-row: 1/2;
@@ -303,15 +332,6 @@ form {
 
     #meta_info tr {
         width: 760px;
-    }
-
-    .filter_type_h2 {
-        font-size: 1.3rem;
-        margin: auto 0 auto 0;
-    }
-
-    .filter_type_h2 a {
-        color: var(--var-orange);
     }
 
     #choose_filter_main {
@@ -351,28 +371,4 @@ form {
         grid-column: 3/4;
     }
 
-    table {
-        gap: 1rem;
-    }
-
-    footer {
-        grid-row: 3/4;
-        grid-column: 2/4;
-        padding: 2rem 2rem 0rem 2rem;
-    }
-
-    nav ul {
-        list-style-position: outside;
-        list-style-type: disc;
-        padding-left: 0.5rem;
-    }
-
-    nav li {
-        margin: 0.5rem;
-    }
-
-    p {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
 }
