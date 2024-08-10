@@ -36,8 +36,8 @@ export class Recipe {
     }
 
         getRecipeHTML() {
-            const RECIPE_WRAPPER = document.createElement('div');
-            RECIPE_WRAPPER.id = 'recipe_wrapper';
+            const RECIPE_WRAPPER = document.createElement('article');
+            RECIPE_WRAPPER.id = 'recipe_article';
 
             const RECIPE_H2 = document.createElement('h2');
             RECIPE_H2.id = 'recipe_name';
@@ -87,7 +87,7 @@ export class Recipe {
 
             RECIPE_WRAPPER.appendChild(RECIPE_PARAGRAPH);
 
-            return RECIPE_WRAPPER;
+            return RECIPE_WRAPPER.innerHTML;
 
         }
 
@@ -106,7 +106,6 @@ export class Recipe {
             TABLE_HEADERS_ROW.innerHTML += `<td></td>`;
             TABLE_HEADERS_ROW.innerHTML += `<th id="Recipe Category">Recipe Category</th>`;
             TABLE_HEADERS_ROW.innerHTML += `<th id="Cuisine">Cuisine</th>`;
-            TABLE_HEADERS_ROW.innerHTML += `<th id="Video on youtube">Video on youtube</th>`;
             TABLE_HEADERS_ROW.innerHTML += `<th id="Recipe source">Recipe source</th>`;
             
             META_INFO_TABLE.appendChild(TABLE_HEADERS_ROW);
@@ -115,21 +114,14 @@ export class Recipe {
             TABLE_DATA_ROW.innerHTML += `<th id="` + this.strMeal + `">` + this.strMeal + `</th>`;
             TABLE_DATA_ROW.innerHTML += `<td headers="` + this.strMeal + ` Recipe Category">` + this.strCategory + `</td>`;
             TABLE_DATA_ROW.innerHTML += `<td headers="` + this.strMeal + ` Cuisine">` + this.strArea + `</td>`;
-            if(this.isEmpty(this.strYoutube)) {
-                this.strYoutube = 'No Youtube Video';
-            }
-            else {
-                this.strYoutube = `<a href=` + this.strYoutube + `>` + this.strYoutube + `</a>`
-            }
-            TABLE_DATA_ROW.innerHTML += `<td headers="` + this.strMeal + ` Video on youtube">` + this.strYoutube + `</td>`;
-            if(this.isEmpty(this.strSource)) {
+           if(this.isEmpty(this.strSource)) {
                 this.strSource = 'No source available';
             }
             else {
                 this.strSource = `<a href=` + this.strSource + `>` + this.strSource + `</a>`
             }
             TABLE_DATA_ROW.innerHTML += `<td headers="` + this.strMeal + ` Recipe Source">` + this.strSource + `</a></td>`;
-
+            
 
             META_INFO_TABLE.appendChild(TABLE_DATA_ROW);
 

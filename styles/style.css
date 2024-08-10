@@ -1,5 +1,5 @@
 :root {
-    --keyword-purple: #re;
+    --keyword-purple: #C678DD;
     --function-blue: #6fb7ee;
     --string-green: #7CF527;
     --var-orange: #E5C07B;
@@ -333,6 +333,7 @@ footer a {
         border-style: solid;
         border-width: 1px;
         border-color: var(--recipe-border);
+        text-wrap: wrap;
     }
 
     #meta_info tr {

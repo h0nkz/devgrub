@@ -4,8 +4,7 @@ import { Recipe } from "./recipe.js";
 const NEW_RND_BTN = document.getElementById('newRandom');
 const NEW_RND_VEGE_BTN = document.getElementById('newVegetarian');
 const NEW_RND_VEGAN_BTN = document.getElementById('newVegan');
-const RECIPE_WRAPPER = document.querySelector('.outer_recipe_wrapper');
-const RECIPE_ARTICLE = document.getElementById('recipe_article');
+let RECIPE_ARTICLE = document.getElementById('recipe_article');
 const META_INFO_FIELDSET = document.getElementById('meta_info');
 
 function addEventListeners() {
@@ -17,7 +16,7 @@ async function getRandomRecipe() {
     let jsonRecipe = await fetchRandomRecipe();
     const rndRecipe = new Recipe(jsonRecipe);
 
-    RECIPE_ARTICLE.replaceChildren(rndRecipe.getRecipeHTML());
+    RECIPE_ARTICLE.innerHTML = rndRecipe.getRecipeHTML();
     META_INFO_FIELDSET.replaceChildren(rndRecipe.getMetaHTML());
 
     
