@@ -126,6 +126,11 @@ footer a {
     margin-bottom: 1rem;
     background-color: var(--recipe-background);
     border-color: var(--recipe-border);
+    color: #fff;
+}
+
+#search_main article, #search_main fieldset {
+    margin-bottom: 1rem;
 }
 
 #recipe_name {
