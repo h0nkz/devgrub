@@ -85,8 +85,8 @@ async function displayRecipe(event) {
 
     let recipe = new Recipe(await fetchRecipeThroughID(id));
 
-    FILTER_MAIN.replaceChildren(createRecipeArticle(recipe));
-    FILTER_MAIN.appendChild(createMetaFieldset(recipe));
+    FILTER_MAIN.replaceChildren(recipe.getRecipeHTML());
+    FILTER_MAIN.appendChild(recipe.getMetaHTML());
     FILTER_MAIN.appendChild(createGoBackFromRecipeButton(recipe, filterType, goBackFromRecipe));
 
 }

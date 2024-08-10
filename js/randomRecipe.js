@@ -1,23 +1,17 @@
 import { fetchRandomRecipe, fetchCategoryList, fetchRecipeThroughID } from "./recipeFetcher.js";
 import { Recipe } from "./recipe.js";
 
-const NEW_RND_BTN = document.getElementById('newRandom');
-const NEW_RND_VEGE_BTN = document.getElementById('newVegetarian');
-const NEW_RND_VEGAN_BTN = document.getElementById('newVegan');
-let RECIPE_ARTICLE = document.getElementById('recipe_article');
-const META_INFO_FIELDSET = document.getElementById('meta_info');
+const RANDOM_MAIN = document.getElementById('random_main');
 
-function addEventListeners() {
-    NEW_RND_BTN.addEventListener('click', getRandomRecipe);
-    NEW_RND_VEGE_BTN.addEventListener('click', getRandomVegetarianRecipe);
-    NEW_RND_VEGAN_BTN.addEventListener('click', getRandomVeganRecipe);
-}
+
 async function getRandomRecipe() {
     let jsonRecipe = await fetchRandomRecipe();
     const rndRecipe = new Recipe(jsonRecipe);
 
-    RECIPE_ARTICLE.innerHTML = rndRecipe.getRecipeHTML();
-    META_INFO_FIELDSET.replaceChildren(rndRecipe.getMetaHTML());
+    RANDOM_MAIN.replaceChildren(rndRecipe.getRecipeHTML());
+    RANDOM_MAIN.appendChild(rndRecipe.getMetaHTML());
+
+    addButtons();
 
     
 }
@@ -36,8 +30,9 @@ async function getRandomVegetarianRecipe() {
     let jsonRecipe = await fetchRecipeThroughID(rndID.idMeal);
     const recipe = new Recipe(jsonRecipe);
 
-    RECIPE_ARTICLE.replaceChildren(recipe.getRecipeHTML());
-    META_INFO_FIELDSET.replaceChildren(recipe.getMetaHTML());
+    RANDOM_MAIN.replaceChildren(recipe.getRecipeHTML());
+    RANDOM_MAIN.appendChild(recipe.getMetaHTML());
+    addButtons();
 }
 
 async function getRandomVeganRecipe() {
@@ -48,9 +43,32 @@ async function getRandomVeganRecipe() {
     let jsonRecipe = await fetchRecipeThroughID(rndID.idMeal);
     const recipe = new Recipe(jsonRecipe);
 
-    RECIPE_ARTICLE.replaceChildren(recipe.getRecipeHTML());
-    META_INFO_FIELDSET.replaceChildren(recipe.getMetaHTML());
+    RANDOM_MAIN.replaceChildren(recipe.getRecipeHTML());
+    RANDOM_MAIN.appendChild(recipe.getMetaHTML());
+    addButtons();
 }
 
-addEventListeners();
+function addButtons() {
+    const newRandom = document.createElement('button');
+    newRandom.innerText = 'getRandomRecipe();';
+    newRandom.id = 'newRandom';
+    newRandom.addEventListener('click', getRandomRecipe);
+
+    const newVegetarian = document.createElement('button');
+    newVegetarian.innerText = 'getRandomVegetarianRecipe();';
+    newVegetarian.id = 'newVegetarian';
+    newVegetarian.addEventListener('click', getRandomVegetarianRecipe);
+
+    const newVegan = document.createElement('button');
+    newVegan.innerText = 'getRandomVeganRecipe();';
+    newVegan.id = 'newVegan';
+    newVegan.addEventListener('click', getRandomVeganRecipe);
+
+    RANDOM_MAIN.appendChild(newRandom);
+    RANDOM_MAIN.appendChild(newVegetarian);
+    RANDOM_MAIN.appendChild(newVegan);
+
+    
+}
+
 getRandomRecipe();

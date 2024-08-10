@@ -36,8 +36,8 @@ export class Recipe {
     }
 
         getRecipeHTML() {
-            const RECIPE_WRAPPER = document.createElement('article');
-            RECIPE_WRAPPER.id = 'recipe_article';
+            const RECIPE_ARTICLE = document.createElement('article');
+            RECIPE_ARTICLE.id = 'recipe_article';
 
             const RECIPE_H2 = document.createElement('h2');
             RECIPE_H2.id = 'recipe_name';
@@ -45,8 +45,8 @@ export class Recipe {
                 this.strMeal +
                 `<span class="keyword"> extends </span><span class="variable">Recipe</span>`;
 
-            //RECIPE_WRAPPER.innerHTML += RECIPE_H2.outerHTML;
-            RECIPE_WRAPPER.appendChild(RECIPE_H2);
+            
+            RECIPE_ARTICLE.appendChild(RECIPE_H2);
 
             const RECIPE_PARAGRAPH = document.createElement('p');
             RECIPE_PARAGRAPH.id = 'recipe_paragraph';
@@ -85,9 +85,9 @@ export class Recipe {
 
             RECIPE_PARAGRAPH.innerHTML += `<br>}`;
 
-            RECIPE_WRAPPER.appendChild(RECIPE_PARAGRAPH);
+            RECIPE_ARTICLE.appendChild(RECIPE_PARAGRAPH);
 
-            return RECIPE_WRAPPER.innerHTML;
+            return RECIPE_ARTICLE;
 
         }
 
@@ -100,6 +100,9 @@ export class Recipe {
         }
 
         getMetaHTML() {
+            const META_INFO_FIELDSET = document.createElement('fieldset');
+            META_INFO_FIELDSET.id = "meta_info";
+
             const META_INFO_TABLE = document.createElement('table');
             META_INFO_TABLE.innerHTML += `<caption>META INFO</caption>`
             const TABLE_HEADERS_ROW = document.createElement('tr');
@@ -125,7 +128,8 @@ export class Recipe {
 
             META_INFO_TABLE.appendChild(TABLE_DATA_ROW);
 
-            return META_INFO_TABLE;
+            META_INFO_FIELDSET.appendChild(META_INFO_TABLE);
+            return META_INFO_FIELDSET;
         }
         
     }

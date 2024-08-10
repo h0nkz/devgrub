@@ -56,8 +56,8 @@ async function displayRecipe(event) {
 
     let recipe = new Recipe(await fetchRecipeThroughID(id));
 
-    SEARCH_MAIN.replaceChildren(createRecipeArticle(recipe));
-    SEARCH_MAIN.appendChild(createMetaFieldset(recipe));
+    SEARCH_MAIN.replaceChildren(recipe.getRecipeHTML());
+    SEARCH_MAIN.appendChild(recipe.getMetaHTML());
     SEARCH_MAIN.appendChild(createGoBackToSearchButton(goBackToSearch));
 }
 
