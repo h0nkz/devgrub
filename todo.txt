@@ -1,3 +1,9 @@
 >> lägg till titlar på html-sidorna
 
 adding to test
+
+Warning: Article lacks heading. Consider using h2-h6 elements to add identifying headings to all articles.
+
+From line 51, column 21; to line 51, column 49
+
+          <article id="recipe_article">↩ 
